@@ -1,0 +1,16 @@
+import sqlite3
+conn = sqllite.connect("college.db")
+cursor = corn.cursor()
+
+student_id = int(input("Enter Student id:"))
+new_mark = int(input("Enter New Mark: "))
+
+cursor.execute(
+    "UPDATE student SET mark = ? WHERE id = ?",
+    (new_mark, student_id)
+)
+
+conn.commit()
+print("Mark updated successfully")
+
+conn.close()
